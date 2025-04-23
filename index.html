@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gait Analysis Viewer</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="welcome">
+      <div><strong>Lakeland Regional 3D Gait System</strong></div>
+    </header>
+
+    <div id="connectionStatus" class="status">🔄 Connecting to device...</div>
+
+    <div class="button-container">
+      <button id="start-button">Start</button>
+      <button id="stop-button">Pause</button>
+      <button id="Calibration">Calibrate</button>
+      <button id="print-report-button">Export as PDF</button>
+    </div>
+
+    <div class="graph-select">
+      <select name="dropDown" id="dropDown">
+        <option value="">--Please select graph--</option>
+        <option value="Gait Speed">Gait Speed</option>
+        <option value="Stride Length">Stride Length</option>
+        <option value="Symmetry">Symmetry</option>
+        <option value="Foot Clearance">Foot Clearance</option>
+      </select>
+    </div>
+
+    <div style="width: 800px; margin: 0 auto;">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="graph-config.js"></script>
+    <script src="dropdown-on-change.js"></script>
+    <script src="ws-handler.js"></script>
+  </div>
+</body>
+</html>
